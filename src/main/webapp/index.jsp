@@ -10,20 +10,21 @@
 <!DOCTYPE html>
 <html>
     <head>
+        
+    
         <title>Instagrim</title>
         <link rel="stylesheet" type="text/css" href="Styles.css" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    </head>
-    <body>
+    <head>
         <header>
-            <h1>InstaGrim ! </h1>
-            <h2>Your world in Black and White</h2>
+            <h1>InstaGrim<h1>
+            <h2>Your world in Black and White<h2>
+             
         </header>
-        <nav>
             <ul>
 
                
-                <li><a href="upload.jsp">Upload</a></li>
+                <h3><li><a href="upload.jsp">Upload</a></li></h3>
                     <%
                         
                         LoggedIn lg = (LoggedIn) session.getAttribute("LoggedIn");
@@ -32,22 +33,27 @@
                             if (lg.getlogedin()) {
                     %>
 
-                <li><a href="/Instagrim/Images/<%=lg.getUsername()%>">Your Images</a></li>
+                <h3><li><a href="/Instagrim/Images/<%=lg.getUsername()%>">Your Images</a></li><h3>
+                        
+                        <h3><li><a href="profile.jsp">My Profile</a></li><h3>
+                                <h3><li><a href="logout.jsp">Logout</a></li><h3>
+                                 
+                        
                     <%}
                             }else{
                                 %>
-                 <li><a href="register.jsp">Register</a></li>
-                <li><a href="login.jsp">Login</a></li>
+                <h3><li><a href="/Instagrim/register">Register</a></li><h3>
+                        <h3><li><a href="/Instagrim/login">Login</a></li><h3>
+                                
+                                                       
                 <%
                                         
                             
                     }%>
             </ul>
-        </nav>
         <footer>
             <ul>
-                <li class="footer"><a href="/Instagrim">Home</a></li>
-                <li>&COPY; Andy C</li>
+                        <h4><li>&COPY; Andy C & Nathan McMahon</li><h4>
             </ul>
         </footer>
     </body>

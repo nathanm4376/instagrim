@@ -17,24 +17,23 @@
     <body>
         <header>
         
-        <h1>InstaGrim ! </h1>
+        <h1>InstaGrim</h1>
         <h2>Your world in Black and White</h2>
         </header>
         
         <nav>
             <ul>
-                <li class="nav"><a href="/Instagrim/upload.jsp">Upload</a></li>
-                <li class="nav"><a href="/Instagrim/Images/majed">Sample Images</a></li>
+                <h3><li class="nav"><a href="/Instagrim/upload.jsp">Upload</a></li></h3>
+                <h3><li class="nav"><a href="/Instagrim/Images/majed">Sample Images</a></li></h3>
             </ul>
         </nav>
  
         <article>
-            <h1>Your Pics</h1>
         <%
-            java.util.LinkedList<Pic> lsPics = (java.util.LinkedList<Pic>) request.getAttribute("Pics");
+            java.util.LinkedList<Pic> lsPics = (java.util.LinkedList<Pic>) request.getAttribute("Pics"); //gets pics from uploads
             if (lsPics == null) {
         %>
-        <p>No Pictures found</p>
+        <h3>You have no pictures on your account yet, please upload some!</h3>
         <%
         } else {
             Iterator<Pic> iterator;

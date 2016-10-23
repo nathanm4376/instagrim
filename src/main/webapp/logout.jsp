@@ -18,17 +18,20 @@
         <h1>InstaGrim</h1>
         <h2>Your world in Black and White</h2>
         </header>
+        <nav>
+            <ul>
+                
+                
+            
+        </nav>
        
         <article>
-            <h3>Login</h3>
-            <form method="POST"  action="login">
-                
-                <h4><li>User Name <input type="text" name="username"></li><h4>
-                <h4><li>Password <input type="password" name="password"></li><h4>
-                <br/>
-                <input type="submit" value="Login"> 
-            </form>
-
+            <h2>You have successfully logged out of your account.<h2>
+                    <%
+                        session.invalidate();
+                        %>
+                        
+                    
         </article>
         <footer>
             

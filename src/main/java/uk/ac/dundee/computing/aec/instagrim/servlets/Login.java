@@ -25,7 +25,7 @@ import uk.ac.dundee.computing.aec.instagrim.stores.LoggedIn;
  *
  * @author Administrator
  */
-@WebServlet(name = "Login", urlPatterns = {"/Login","/Login/*"})
+@WebServlet(name = "login", urlPatterns = {"/login"})
 public class Login extends HttpServlet {
 
     Cluster cluster=null;
@@ -50,6 +50,8 @@ public class Login extends HttpServlet {
         
         String username=request.getParameter("username");
         String password=request.getParameter("password");
+        //String first_name=request.getParameter("first_name");
+        //String last_name=request.getParameter("last_name");
         
         User us=new User();
         us.setCluster(cluster);
@@ -57,9 +59,17 @@ public class Login extends HttpServlet {
         HttpSession session=request.getSession();
         System.out.println("Session in servlet "+session);
         if (isValid){
+            
+            String first_name = us.displayFirst_name(username);
+            String last_name = us.displayLast_name(username);
+            
             LoggedIn lg= new LoggedIn();
             lg.setLogedin();
             lg.setUsername(username);
+            lg.setFirstName(first_name);
+            lg.setLastName(last_name);
+            lg.setPassword(password);
+            
             //request.setAttribute("LoggedIn", lg);
             
             session.setAttribute("LoggedIn", lg);
@@ -68,11 +78,19 @@ public class Login extends HttpServlet {
 	    rd.forward(request,response);
             
         }else{
-            response.sendRedirect("/Instagrim/login.jsp");
+            response.sendRedirect("/Instagrim/index.jsp");
         }
         
+        
     }
-
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+        RequestDispatcher rd=request.getRequestDispatcher("login.jsp");
+        rd.forward(request,response);
+    }
+   
     /**
      * Returns a short description of the servlet.
      *
@@ -84,3 +102,6 @@ public class Login extends HttpServlet {
     }// </editor-fold>
 
 }
+
+
+

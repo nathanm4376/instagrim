@@ -72,7 +72,14 @@ public final class Keyspaces {
                 System.out.println("Can't create tweet table " + et);
             }
             System.out.println("" + Createuserpiclist);
-
+            
+            /*try {
+                SimpleStatement cqlQuery = new SimpleStatement("drop table instagrim.userprofiles");
+                session.execute(cqlQuery);
+            } catch (Exception et) {
+                System.out.println("Can't create tweet table " + et);
+            }
+            */
             try {
                 SimpleStatement cqlQuery = new SimpleStatement(Createuserpiclist);
                 session.execute(cqlQuery);

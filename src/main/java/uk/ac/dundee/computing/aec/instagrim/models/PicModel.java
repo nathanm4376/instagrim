@@ -86,7 +86,8 @@ public class PicModel {
             System.out.println("Error --> " + ex);
         }
     }
-
+        
+        
     public byte[] picresize(String picid,String type) {
         try {
             BufferedImage BI = ImageIO.read(new File("/var/tmp/instagrim/" + picid));

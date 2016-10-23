@@ -14,31 +14,26 @@
     </head>
     <body>
         <header>
-        <h1>InstaGrim ! </h1>
+        <h1>InstaGrim</h1>
         <h2>Your world in Black and White</h2>
         </header>
-        <nav>
-            <ul>
-                
-                <li><a href="/Instagrim/Images/majed">Sample Images</a></li>
-            </ul>
-        </nav>
-       
         <article>
-            <h3>Register as user</h3>
-            <form method="POST"  action="Register">
+            <form method="POST"  action="register">
                 <ul>
-                    <li>User Name <input type="text" name="username"></li>
-                    <li>Password <input type="password" name="password"></li>
-                </ul>
+                    <h3><li>Please enter your details to register with Instagrim</li></h3>
+                    <h3><li>First Name   <input type="text" name="first_name"></li><h3>
+                    <h3><li>Last Name    <input type="text" name="last_name"></li><h3>
+                    <h3><li>User Name    <input type="text" name="username"></li><h3>
+                    <h3><li>Password     <input type="password" name="password"></li><h3>          
                 <br/>
-                <input type="submit" value="Regidter"> 
+                <input type="submit" value="Register">
+                </ul>
             </form>
 
         </article>
         <footer>
             <ul>
-                <li class="footer"><a href="/Instagrim">Home</a></li>
+                <li class="footer"><a href="/Instagrim">Cancel Registration Form</a></li>
             </ul>
         </footer>
     </body>
